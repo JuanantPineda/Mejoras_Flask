@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="icon" href="/static/images/gaming.webp">
+    <link rel="shortcut icon" href="/static/images/gaming.webp">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container_12">
+        <div class="grid_12">
+          <h3 class="retro">Retro Pineda Games</h3>
+          <div id="countdown"></div>
+          <div class="clear"></div>
+          <div class="menu_block">
+            <nav>
+              <ul class="sf-menu" id="menu">
+                <li class="current"><a href="/">Inicio</a></li>
+              </ul>
+            </nav>
+            <div class="clear"></div>
+          </div>
+          <div class="clear"></div>
+        </div>
+      </div>
+
+        <!-- A wrapper for all the blog posts -->
+        {% block content %}{% endblock %}
+
+<footer>
+    <div class="container_12">
+        <div class="grid_12">
+            <div class="socials"> <a href="#"></a> <a href="#"></a> <a href="#"></a> <a href="#"></a> </div>
+            <div class="copy"><p>Hecho por Juan Antonio Pineda Amador</p></div>
+        </div>
+    </div>
+</footer>     
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Detalle{% endblock %}
+{% block content %}
+<div class="content">
+  <div class="container_12">
+    <div class="grid_9">
+      <h3 class="retro">Detalles sobre el Episodio</h3>
+      {% for var in detalles -%}
+        <p>Nombre del episodio: <b>{{ var.nombre }}</b></p>
+        <p>Numero de temporada: <b>{{ var.temporada }}</b></p>
+        <p>Numero de episodio: <b>{{ var.puntuacion }}</b></p>
+        <p>Fecha de emision: <b>{{ var.emision }}</b></p>
+        <p>Puntuacion del episodio: <b>{{ var.puntuacion }}</b></p>
+      {% endfor -%}    
+    </div>
+  </div>
+</div>
+{% endblock %}
