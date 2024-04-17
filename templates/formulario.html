@@ -7,10 +7,17 @@
       
       <h3 class="retro">Formulario</h3>
       <form action="/formulario" method="post">
-        <label>Introducir una cadena</label>
+        <label>Introduce una cadena</label>
         <input type="text" name="letra"/><br/>
-        <label>Introfucir una temporada</label>
-        <input type="text" name="temporada"/><br/>
+        <label>Introce una temporada</label>
+        <select type="number" name="temporada">
+          <option value="0">Ninguna</option>
+          <option value="1">Temporada 1</option>
+          <option value="2">Temporada 2</option>
+          <option value="3">Temporada 3</option>
+          <option value="4">Temporada 4</option>
+        </select>
+        <br>
         <input type="submit" value="Enviar"/>
       </form>
       <br>
@@ -22,6 +29,7 @@
             <tr>
                 <th>Episodio</th>
                 <th>Puntuacion</th>
+                <th>Temporada</th>
                 <th>Descripcion</th>
             </tr>
         </thead>
@@ -30,6 +38,7 @@
               <tr>
               <td class="center">{{ enlace.nombre }}</td>
               <td>{{ enlace.puntuacion }}</td>
+              <td>{{ enlace.temporada }}</td>
               <td><a href="/detalle/{{ enlace.id }}">Detalle</a></td>
               </tr>
               {% endfor -%}

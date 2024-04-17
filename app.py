@@ -18,18 +18,24 @@ def formulario():
 def episodios():
     cadena=request.form.get("letra")
     temporada=request.form.get("temporada")
-
     episodios = []
     finalEpisodios = []
 
     for var in datos["_embedded"]["episodes"]:
-        diccionario = {"nombre": var["name"], "puntuacion": var["rating"]["average"],"id": var["id"]}
+        diccionario = {"nombre": var["name"], "puntuacion": var["rating"]["average"],"temporada": var["season"],"id": var["id"]}
         episodios.append(diccionario)
-
-    for var in episodios:
-        if var["nombre"].startswith(cadena):
-            diccionario2 = {"nombre": var["nombre"], "puntuacion": var["puntuacion"], "id":var["id"]}
-            finalEpisodios.append(diccionario2)
+    
+    if int(temporada) == 0:
+        for var in episodios:
+            if var["nombre"].startswith(cadena):
+                diccionario2 = {"nombre": var["nombre"], "puntuacion": var["puntuacion"],"temporada": var["temporada"],"id":var["id"]}
+                finalEpisodios.append(diccionario2)
+    else:
+        for var in episodios:
+            if var["nombre"].startswith(cadena):
+                if int(temporada) == var["temporada"]:
+                    diccionario2 = {"nombre": var["nombre"], "puntuacion": var["puntuacion"],"temporada": var["temporada"],"id":var["id"]}
+                    finalEpisodios.append(diccionario2)
             
     return render_template("formulario.html",finalEpisodios=finalEpisodios)
 
