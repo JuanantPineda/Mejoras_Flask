@@ -1,5 +1,6 @@
 from flask import Flask, render_template, abort, redirect,request
 app = Flask(__name__)	
+import os
 
 import json
 with open("estructura.json") as fichero:
@@ -49,5 +50,5 @@ def detalle(id):
             
     return render_template("detalle.html",id=id,detalles=detalles)
 
-
-app.run("0.0.0.0",5000,debug=True)
+port=os.environ["PORT"]
+app.run("0.0.0.0",int(port),debug=False)
