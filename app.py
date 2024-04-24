@@ -39,7 +39,7 @@ def episodios():
                     diccionario2 = {"nombre": var["nombre"], "puntuacion": var["puntuacion"],"temporada": var["temporada"],"id":var["id"]}
                     finalEpisodios.append(diccionario2)
             
-    return render_template("formulario.html",finalEpisodios=finalEpisodios)
+    return render_template("formulario.html",finalEpisodios=finalEpisodios,cadena=cadena)
 
 @app.route('/detalle/<id>')
 def detalle(id):
