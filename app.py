@@ -19,6 +19,7 @@ def formulario():
 def episodios():
     cadena=request.form.get("letra")
     temporada=request.form.get("temporada")
+    
     episodios = []
     finalEpisodios = []
 

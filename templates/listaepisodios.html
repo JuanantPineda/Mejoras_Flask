@@ -9,24 +9,24 @@
       {% if not finalEpisodios %}
         <h4 class="retro">No hay Episodios</h4>
       {% else %}
-      <table>
-        <thead>
-            <tr>
-                <th>Episodio</th>
-                <th>Puntuacion</th>
-                <th>Descripcion</th>
-            </tr>
-        </thead>
-        <tbody> 
-              {% for enlace in finalEpisodios -%}
+        <table>
+          <thead>
               <tr>
-              <td class="center">{{ enlace.nombre }}</td>
-              <td>{{ enlace.puntuacion }}</td>
-              <td><a href="/detalle/{{ enlace.id }}">Detalle</a></td>
+                  <th>Episodio</th>
+                  <th>Puntuacion</th>
+                  <th>Descripcion</th>
               </tr>
-              {% endfor -%}
-        </tbody>
-    </table>
+          </thead>
+          <tbody> 
+                {% for enlace in finalEpisodios -%}
+                <tr>
+                <td class="center">{{ enlace.nombre }}</td>
+                <td>{{ enlace.puntuacion }}</td>
+                <td><a href="/detalle/{{ enlace.id }}">Detalle</a></td>
+                </tr>
+                {% endfor -%}
+          </tbody>
+      </table>
     {% endif %}
 
   </div>
