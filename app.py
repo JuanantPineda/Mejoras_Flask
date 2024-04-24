@@ -15,7 +15,7 @@ def index():
 def formulario():
     return render_template("formulario.html")
 
-@app.route('/formulario',methods=["POST"])
+@app.route('/formulario',methods=["POST","GET"])
 def episodios():
     cadena=request.form.get("letra")
     temporada=request.form.get("temporada")
