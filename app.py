@@ -21,6 +21,7 @@ def episodios():
     temporada=request.form.get("temporada")
     episodios = []
     finalEpisodios = []
+    contador = 0
 
     for var in datos["_embedded"]["episodes"]:
         diccionario = {"nombre": var["name"], "puntuacion": var["rating"]["average"],"temporada": var["season"],"id": var["id"]}
@@ -37,8 +38,9 @@ def episodios():
                 if int(temporada) == var["temporada"]:
                     diccionario2 = {"nombre": var["nombre"], "puntuacion": var["puntuacion"],"temporada": var["temporada"],"id":var["id"]}
                     finalEpisodios.append(diccionario2)
+                    contador = contador+1
             
-    return render_template("formulario.html",finalEpisodios=finalEpisodios)
+    return render_template("formulario.html",finalEpisodios=finalEpisodios,contador=contador)
 
 @app.route('/detalle/<id>')
 def detalle(id):
