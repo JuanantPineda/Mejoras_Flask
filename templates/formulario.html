@@ -22,12 +22,9 @@
       </form>
       <br>
 
-      {% if contador > 0 %}
-        <p>Introducir un valor</p>
+      {% if not finalEpisodios %}
+        <h4 class="retro">No hay Episodios</h4>
       {% else %}
-        {% if not finalEpisodios %}
-          <h4 class="retro">No hay Episodios</h4>
-        {% else %}
         <table>
           <thead>
               <tr>
@@ -48,7 +45,6 @@
                 {% endfor -%}
           </tbody>
       </table>
-      {% endif %}
     {% endif %}
     </div>
   </div>
